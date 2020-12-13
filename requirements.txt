@@ -1,3 +1,13 @@
-numpy
-ipywidgets
-nbinteract
+name: virtual_environment
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pandas
+  - seaborn
+  - matplotlib
+  - ipympl
+  - pip
+  - pip:
+    - Biopython
