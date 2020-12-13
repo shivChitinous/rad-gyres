@@ -1,9 +1,0 @@
-numpy
-ipywidgets
-nbinteract
-matplotlib
-ipympl
-jupyterlab
-Biopython
-pandas
-seaborn
