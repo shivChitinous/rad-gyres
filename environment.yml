@@ -7,7 +7,7 @@ dependencies:
   - pandas
   - seaborn
   - matplotlib
-  - pingouin
+  - ipympl
   - pip
   - pip:
     - Biopython
