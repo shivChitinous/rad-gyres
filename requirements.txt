@@ -1,13 +1,8 @@
-name: virtual_environment
-channels:
-  - conda-forge
-dependencies:
-  - python
-  - numpy
-  - pandas
-  - seaborn
-  - matplotlib
-  - ipympl
-  - pip
-  - pip:
-    - Biopython
+numpy
+ipywidgets
+nbinteract
+Biopython
+pandas
+matplotlib
+seaborn
+ipympl
