@@ -1,7 +1,6 @@
 numpy
 ipywidgets
 nbinteract
-ipympl
 matplotlib
 Biopython
 pandas
