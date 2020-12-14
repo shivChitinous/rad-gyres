@@ -56,14 +56,15 @@ def plot_protein(structure,title="",point=None,sphere=None):
     fig1.update_traces(line=dict(width=5),legendgroup="chain")
     
     #termini
-    _,chains = structure['chain'].factorize()
-    for c in chains:
+    _,chains = structure['chain'].factorize(); val = True
+    for i,c in enumerate(chains):
         slic = (mask) & (structure['chain']==c)
         fig_term = px.scatter_3d(structure.loc[slic].iloc[[0,-1]],x='x',y='y',z='z',color='element',
                              color_discrete_sequence=px.colors.qualitative.Dark24_r)
-        fig_term.update_traces(marker=dict(size=3,symbol='x'),legendgroup="termini",showlegend=False)
+        if i>0: val = False
+        fig_term.update_traces(marker=dict(size=3,symbol='x'),legendgroup="termini",showlegend=val)
         fig1.add_traces(fig_term.data)
-        
+    
     #all atoms
     fig2 = px.scatter_3d(structure,x='x',y='y',z='z',color='element',
                         color_discrete_sequence=px.colors.qualitative.D3)
@@ -71,7 +72,8 @@ def plot_protein(structure,title="",point=None,sphere=None):
     else: fig2.update_traces(marker=dict(size=2),legendgroup="element")
 
     fig2.add_traces(fig1.data)
-    fig2.update_layout(title=title,legend=dict(orientation="h",x=0,y=1,title=dict(text="   Atom    Chain",side="top")))
+    fig2.update_layout(title=title,legend=dict(orientation="h",x=0,y=1,title=dict(text="   Atom    Chain   Terminus",
+                                                                                  side="top")))
     
     #COM
     if point is not None:
