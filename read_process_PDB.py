@@ -49,20 +49,31 @@ def atomize(pdbfile,heteroatom=False):
     return atoms
 
 def plot_protein(structure,title="",point=None,sphere=None):
+    
+    #skeleton
     mask = (structure['name']=='CA')|(structure['name']=='N')|(structure['name']=='C')
-
     fig1 = px.line_3d(structure.loc[mask],x='x',y='y',z='z',color='chain')
     fig1.update_traces(line=dict(width=5),legendgroup="chain")
+    
+    #termini
+    _,chains = structure['chain'].factorize()
+    for c in chains:
+        slic = (mask) & (structure['chain']==c)
+        fig_term = px.scatter_3d(structure.loc[slic].iloc[[0,-1]],x='x',y='y',z='z',color='element',
+                             color_discrete_sequence=px.colors.qualitative.Dark24_r)
+        fig_term.update_traces(marker=dict(size=3,symbol='x'),legendgroup="termini",showlegend=False)
+        fig1.add_traces(fig_term.data)
         
-
+    #all atoms
     fig2 = px.scatter_3d(structure,x='x',y='y',z='z',color='element',
                         color_discrete_sequence=px.colors.qualitative.D3)
     if sphere is None: fig2.update_traces(marker=dict(size=2),legendgroup="element",visible="legendonly")
     else: fig2.update_traces(marker=dict(size=2),legendgroup="element")
 
     fig2.add_traces(fig1.data)
-    fig2.update_layout(title=title,legend=dict(orientation="h",x=0,y=1,title=dict(text="Elements    Chain",side="top")))
+    fig2.update_layout(title=title,legend=dict(orientation="h",x=0,y=1,title=dict(text="   Atom    Chain",side="top")))
     
+    #COM
     if point is not None:
         fig3 = px.scatter_3d(pd.DataFrame(np.array([point]),columns=['x','y','z']),x='x',y='y',z='z',
                     color_discrete_sequence=px.colors.qualitative.Dark2_r)
@@ -70,6 +81,7 @@ def plot_protein(structure,title="",point=None,sphere=None):
         fig3.update_traces(marker=dict(size=5))
         fig2.add_traces(fig3.data)
         
+    #Rg
     if sphere is not None:
         u, v = np.mgrid[0:2*np.pi:50j, 0:np.pi:50j]
         x = sphere*np.cos(u)*np.sin(v)+point[0]
