@@ -7,8 +7,7 @@ dependencies:
   - pandas
   - seaborn
   - matplotlib
-  - ipympl
-  - jupyterlab
   - pip
   - pip:
     - Biopython
+    - plotly
