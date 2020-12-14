@@ -1,5 +1,6 @@
 # rad-gyres
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/shivChitinous/rad-gyres/HEAD)|[GitHub](https://github.com/shivChitinous/rad-gyres/edit/main/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/shivChitinous/rad-gyres/HEAD)
+[### GitHub](https://github.com/shivChitinous/rad-gyres/edit/main/)
 
 [**Check out protein structures here!**](https://shivchitinous.github.io/rad-gyres/radii_gyration)
 
