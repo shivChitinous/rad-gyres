@@ -1,11 +1,11 @@
 # rad-gyres
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/shivChitinous/rad-gyres/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/shivChitinous/rad-gyres/HEAD)|[GitHub](https://github.com/shivChitinous/rad-gyres/edit/main/)
 
 [**Check out protein structures here!**](https://shivchitinous.github.io/rad-gyres/radii_gyration)
 
 Visualizing centre of masses and radii of gyration for some proteins in the protein data bank (PDB). 
 
-`read_process_PDB` and `radii_gyration.ipynb` contain scripts for following
+`read_process_PDB` and `radii_gyration.ipynb` contain scripts for the following:
 1. Downloading and parsing `.pdb` files
 2. Plotting positions of skeletal atoms
 3. Plotting all atoms
