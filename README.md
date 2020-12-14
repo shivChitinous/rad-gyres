@@ -18,7 +18,7 @@ Visualizing centre of masses and radii of gyration for some proteins in the prot
 2. [Rob Phillips, Jane Kondev, Julia Theriot, and Hernan G. Garcia. 1960. Physical Biology of the Cell. Second Edition.](https://www.routledge.com/Physical-Biology-of-the-Cell/Phillips-Kondev-Theriot-Garcia-Phillips-Kondev-Theriot-Garcia/p/book/9780815344506)
 3. [Chaitanya Athale's Cellular Biophysics Course at IISER Pune](http://www.iiserpune.ac.in/~cathale/lects/bio322-phybio1/2020bio315/Bio315-2020main.html)
 
-[**GitHub**](https://github.com/shivChitinous/rad-gyres/edit/main/)
+[**GitHub**](https://github.com/shivChitinous/rad-gyres)
 
 
 
