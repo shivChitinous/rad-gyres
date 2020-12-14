@@ -5,7 +5,7 @@
 
 Visualizing centre of masses and radii of gyration for some proteins in the protein data bank (PDB). 
 
-`read_process_PDB` and `radii_gyration.ipynb` contains functions for following
+`read_process_PDB` and `radii_gyration.ipynb` contain scripts for following
 1. Downloading and parsing `.pdb` files
 2. Plotting positions of skeletal atoms
 3. Plotting all atoms
