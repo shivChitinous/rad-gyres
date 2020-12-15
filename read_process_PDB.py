@@ -94,8 +94,11 @@ def plot_protein(structure,title="",point=None,sphere=None):
             x = x,
             y = y,
             z = z,
-            opacity=0.1
+            colorscale='Blues_r',
+            showlegend=True,
+            name='$<R_G^2>$'
             ))
+        
         
         fig4.update_traces(showscale=False)
         fig2.add_traces(fig4.data)
